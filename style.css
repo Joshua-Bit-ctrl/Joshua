@@ -1,0 +1,529 @@
+/* ============ 1. COLORS & THEME ============ */
+:root {
+  --bg: #fefefe;
+  --text: #1f1f1f;
+  --card-bg: #f7f7f7;
+  --accent: #c0710a;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f5f5f5;
+  --card-bg: #1e1e1e;
+  --accent: #d88a2a;
+}
+
+/* ============ 2. RESET & BASE ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* base for calculations */
+}
+
+body {
+  font-family: Georgia;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+/* ============ 3. TYPOGRAPHY - EDIT HERE ============ */
+/* Change these values to adjust text size/style across the site */
+
+body {
+  font-size: 20px; /* base paragraph size */
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: cursive;
+  font-weight: bolder;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 600;
+  font-weight: bolder;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+  font-family: cursive;
+  font-weight: bolder;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  font-family: georgia;
+}
+
+/* Section-specific text */
+.hero h1 {
+  font-size: 50px;
+}
+
+.hero p {
+  font-size: 25px;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.card h2,
+.card h3,
+.card h4 {
+  font-size: 35px;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 16px;
+}
+
+/* ============ 4. NAVIGATION ============ */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 19px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+/* ============ 5. HERO SECTION ============ */
+.hero {
+  padding: 5rem 5%;
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ============ 6. FEATURE CARDS ============ */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 3rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ============ 7. WAVE ANIMATION ============ */
+.wave-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  perspective: 1000px;
+}
+
+.wave-wrap img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.wave-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 25%,
+    rgba(192, 113, 10, 0.3) 50%,
+    transparent 75%
+  );
+  background-size: 200% 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.wave-wrap.wave-active img {
+  transform: rotateX(180deg);
+}
+
+.wave-wrap.wave-active::after {
+  opacity: 1;
+  animation: wave-move 1.2s linear infinite;
+}
+
+@keyframes wave-move {
+  0% {
+    background-position: 200% 200%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+/* CONTACT FORM */
+.contact {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* DELETED: .contact h2 rule is gone. We style it inside .contact-header h2 now */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #ff4d4d;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.contact button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+}
+
+#formStatus {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* UPDATED: Flexbox for logo + heading side by side */
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 22.5px;
+  flex-shrink: 0;
+}
+
+.contact-header h2 {
+  margin: 0;
+  text-align: left;
+  font-size: 2rem;
+}
+
+
+/* ============ 9. ABOUT PAGE ============ */
+.about {
+  max-width: 809px;
+  margin: 0 auto;
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.about h1 {
+  margin-bottom: 1.5rem;
+  font-family: cursive;
+}
+
+.about p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  font-family: Georgia;
+}
+
+.about-joshua {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============ 10. SKILLS SECTION ============ */
+.skills {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+}
+
+.skills h2,
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: cursive;
+  font-weight: bolder;
+}
+
+.skill {
+  margin-bottom: 1.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--card-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width 1.5s ease-out;
+  display: block;
+  will-change: width;
+}
+
+/* ============ 11. TIMELINE ============ */
+.timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-date {
+  min-width: 100px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.timeline-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ============ 12. PROJECTS PAGE ============ */
+.projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 5%;
+}
+
+.projects h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 24px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-img {
+  width: 100%;
+  height: 180px;
+  background: var(--accent);
+  opacity: 1;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  padding: 1rem 1rem 0.5rem;
+}
+
+.project-card p {
+  padding: 0 1rem 1.5rem;
+  opacity: 1;
+}
+
+/* ============ 12. FOOTER ============ */
+footer {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.7;
+}
+
+/* ============ 13. MOBILE ============ */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

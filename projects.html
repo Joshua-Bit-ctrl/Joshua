@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Commey Joshua Traore</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="logo">Commey Joshua Traore</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <button id="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Project Grid -->
+      <section class="projects">
+        <h1>My Projects</h1>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="js">JavaScript</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="project-grid">
+          <div class="project-card" data-category="web">
+            <img
+              src="/imgs/abstractwave.webp"
+              alt="Landing Page screenshot"
+              class="project-img"
+            />
+            <h3>Landing Page</h3>
+            <p>Responsive landing page built with HTML and CSS.</p>
+          </div>
+
+          <div class="project-card" data-category="js">
+            <img
+              src="/imgs/simpledolistusingbootstrap.png"
+              alt="Todo App screenshot"
+              class="project-img"
+            />
+            <h3>Todo App</h3>
+            <p>Interactive todo list with localStorage support.</p>
+          </div>
+
+          <div class="project-card" data-category="web">
+            <img
+              src="/imgs/portfolio.png"
+              alt="Portfolio Site screenshot"
+              class="project-img"
+            />
+            <h3>Portfolio Site</h3>
+            <p>Multi-page portfolio with dark mode toggle.</p>
+          </div>
+
+          <div class="project-card" data-category="js">
+            <img
+              src="/imgs/Weather.jpg"
+              alt="Weather App screenshot"
+              class="project-img"
+            />
+            <h3>Weather App</h3>
+            <p>Simple weather app using vanilla JavaScript.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Commey Joshua Traore. Built for Phase 1.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

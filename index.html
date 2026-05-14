@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commey Joshua Traore | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="logo">Commey Joshua Traore</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <button id="theme-toggle" aria-label="Toggle theme"></button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Hi, I'm Commey Joshua Traore</h1>
+          <p>Frontend Developer building responsive, clean web experiences</p>
+          <a href="projects.html" class="cta-btn">View My Work</a>
+        </div>
+      </section>
+    </main>
+    <!-- Features Section -->
+    <section class="features">
+      <div class="card">
+        <img
+          src="/imgs/OIP(35).webp"
+          alt="Responsive design on phone and laptop"
+        />
+        <h2>Responsive Design</h2>
+        <p>Websites that work perfectly on mobile, tablet, and desktop.</p>
+      </div>
+
+      <div class="card">
+        <img src="/imgs/CleanCode.jpg" alt="Clean code on a screen" />
+        <h3>Clean Code</h3>
+        <p>Readable, maintainable code following best practices.</p>
+      </div>
+
+      <div class="card">
+        <div class="wave-wrap">
+          <img
+            id="ui-wave-img"
+            src="/imgs/girlworkusinglaptop.jpg"
+            alt="Interactive UI animation"
+          />
+        </div>
+        <h4>Interactive UI</h4>
+        <p>Smooth interactions that make sites feel alive.</p>
+      </div>
+    </section>
+
+<section class="contact">
+  <div class="contact-header">
+    <img src="/imgs/OIP19.webp" alt="Logo" class="contact-logo">
+    <h2>Get in Touch</h2>
+  </div>
+
+  <form id="contactForm" novalidate>
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Your Name">
+      <small class="error"></small>
+    </div>
+
+    <div class="form-group">
+      <input type="email" id="email" placeholder="Your Email">
+      <small class="error"></small>
+    </div>
+
+    <div class="form-group">
+      <textarea id="message" placeholder="Your Message" rows="5"></textarea>
+      <small class="error"></small>
+    </div>
+
+    <button type="submit">Send Message</button>
+    <p id="formStatus"></p>
+  </form>
+</section>
+    <footer>
+      <p>© 2026 Commey Joshua Traore. Built for Phase 1.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
